@@ -89,3 +89,7 @@ You'll often see learning rates denoted by the symbol, $\gamma$.  This is the gr
 ## Using Adaboost and Gradient Boosted Trees
 
 The sklearn library contains some excellent implementations of Adaboost, as well as several different types of Gradient Boosting Classifiers.  These classifiers can be found in the `ensemble` module, same as Random Forests. 
+
+## Summary
+
+In this lesson, we learned about **_Weak Learners_**, and how they are used in various **_Gradient Boosting_** algorithms. We also learned about two specific algorithms--**_AdaBoost_** and **_Gradient Boosted Trees_**, and we compared how they are similar and how they are different!
