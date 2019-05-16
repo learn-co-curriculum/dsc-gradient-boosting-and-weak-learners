@@ -34,7 +34,7 @@ In this way, each new weak learner is specifically tuned to focus on the weak po
 
 ### Similarities
 
-Boosting algorithms share some similarities with Random Forests, as well as some notable differences. Like Random Forests, boosting algorithms are an ensemble of many different models with high inter-group diversity. Boosting algorithms also aggregate the predictions of each constituent model into an overall prediction. Both algoritms also make use of tree models (although this isn't strictly required, in the case of boosting). 
+Boosting algorithms share some similarities with Random Forests, as well as some notable differences. Like Random Forests, boosting algorithms are an ensemble of many different models with high inter-group diversity. Boosting algorithms also aggregate the predictions of each constituent model into an overall prediction. Both algorithms also make use of tree models (although this isn't strictly required, in the case of boosting). 
 
 ### Difference 1: Independent vs. Iterative
 
@@ -61,9 +61,9 @@ In Adaboost, each learner is trained on a subsample of the dataset, much like we
 
 The following diagram demonstrates how the weights change for each example as classifiers get them right and wrong. 
 
-<img src='adaboost.png'>
+<img src='images/adaboost.png'>
 
-Pay attention to the colors of the pluses and minuses--pluses are meant to be in the blue section, and minuses are meant to be in the red. The decision boundary of the tree can be interpreted as the line drawn between the red and blue sections. As we can see by looking at the examples, examples that were misclassified are larger in the next iteration, while examples that were classified correctly are smaller. As we combine the decision boundaries of each new classifier, we end up with a classifer that correctly classifies all of the examples!
+Pay attention to the colors of the pluses and minuses--pluses are meant to be in the blue section, and minuses are meant to be in the red. The decision boundary of the tree can be interpreted as the line drawn between the red and blue sections. As we can see by looking at the examples, examples that were misclassified are larger in the next iteration, while examples that were classified correctly are smaller. As we combine the decision boundaries of each new classifier, we end up with a classifier that correctly classifies all of the examples!
 
 **_Key Takeaway:_** Adaboost creates new classifiers by continually influencing the distribution of the data sampled to train each successive learner. 
 
@@ -75,15 +75,14 @@ Pay attention to the colors of the pluses and minuses--pluses are meant to be in
 Since the loss is most heavily inflated by examples where the model was wrong, gradient descent will push the algorithm towards creating the next learner to focus on these harder examples. If the next tree gets these right, then the loss goes down! In this way, gradient descent allows us to continually train and improve on the loss for each model to improve the overall performance of the ensemble as a whole by focusing on the "hard" examples that cause the loss to be high. 
 
 
-
-<img src='gradient-boosting.png'>
+<img src='images/gradient-boosting.png'>
 
 
 ### Learning Rates
 
 Often, we want to artificially limit the "step size" we take in gradient descent. Small, controlled changes in the parameters we're optimizing with Gradient Descent will mean that the overall process is slower, but the parameters are more likely to converge to their optimal values. The learning rate for your model is a small scalar meant to artificially reduce the step size in gradient descent. Learning rate is a tunable parameter for your model that you can set--large learning rates get closer to the optimal values more quickly, but have trouble landing exactly at the optimal values because the step size is too big for the small distances it needs to travel when it gets close. Conversely, small learning rates means the model will take a longer time to get to the optimal parameters, but when it does get there, it will be extremely close to the optimal values, thereby providing the best overall performance for the model. 
 
-You'll often see learning rates denoted by the symbol, $\gamma$.  This is the greek letter, **_Gamma_**.  Don't worry if you're still hazy on the concept of gradient descent--we'll explore it in much more detail when we start studying Deep Learning!
+You'll often see learning rates denoted by the symbol, $\gamma$.  This is the Greek letter, **_Gamma_**.  Don't worry if you're still hazy on the concept of gradient descent--we'll explore it in much more detail when we start studying Deep Learning!
 
 
 ## Using Adaboost and Gradient Boosted Trees
