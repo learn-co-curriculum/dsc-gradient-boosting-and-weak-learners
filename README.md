@@ -61,7 +61,7 @@ In Adaboost, each learner is trained on a subsample of the dataset, much like we
 
 The following diagram demonstrates how the weights change for each example as classifiers get them right and wrong. 
 
-<img src='images/adaboost.png'>
+<img src='images/new_adaboost.png' width="600">
 
 Pay attention to the colors of the pluses and minuses--pluses are meant to be in the blue section, and minuses are meant to be in the red. The decision boundary of the tree can be interpreted as the line drawn between the red and blue sections. As we can see by looking at the examples, examples that were misclassified are larger in the next iteration, while examples that were classified correctly are smaller. As we combine the decision boundaries of each new classifier, we end up with a classifier that correctly classifies all of the examples!
 
@@ -75,7 +75,7 @@ Pay attention to the colors of the pluses and minuses--pluses are meant to be in
 Since the loss is most heavily inflated by examples where the model was wrong, gradient descent will push the algorithm towards creating the next learner to focus on these harder examples. If the next tree gets these right, then the loss goes down! In this way, gradient descent allows us to continually train and improve on the loss for each model to improve the overall performance of the ensemble as a whole by focusing on the "hard" examples that cause the loss to be high. 
 
 
-<img src='images/gradient-boosting.png'>
+<img src='images/new_gradient-boosting.png'>
 
 
 ### Learning Rates
@@ -92,3 +92,8 @@ The sklearn library contains some excellent implementations of Adaboost, as well
 ## Summary
 
 In this lesson, we learned about **_Weak Learners_**, and how they are used in various **_Gradient Boosting_** algorithms. We also learned about two specific algorithms--**_AdaBoost_** and **_Gradient Boosted Trees_**, and we compared how they are similar and how they are different!
+
+
+```python
+
+```
