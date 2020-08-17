@@ -64,7 +64,7 @@ In Adaboost, each learner is trained on a subsample of the dataset, much like we
 
 The following diagram demonstrates how the weights change for each example as classifiers get them right and wrong. 
 
-<img src='images/new_adaboost.png' width="600">
+<img src="images/new_adaboost.png" width="600">
 
 Pay attention to the colors of the pluses and minuses -- pluses are meant to be in the blue section, and minuses are meant to be in the red. The decision boundary of the tree can be interpreted as the line drawn between the red and blue sections. As you can see above, examples that were misclassified are larger in the next iteration, while examples that were classified correctly are smaller. As we combine the decision boundaries of each new classifier, we end up with a classifier that correctly classifies all of the examples!
 
@@ -78,14 +78,14 @@ Pay attention to the colors of the pluses and minuses -- pluses are meant to be 
 Since the loss is most heavily inflated by examples where the model was wrong, gradient descent will push the algorithm towards creating a new learner that will focus on these harder examples. If the next tree gets these right, then the loss goes down! In this way, gradient descent allows us to continually train and improve on the loss for each model to improve the overall performance of the ensemble as a whole by focusing on the "hard" examples that cause the loss to be high. 
 
 
-<img src='images/new_gradient-boosting.png'>
+<img src="images/new_gradient-boosting.png">
 
 
 ### Learning rates
 
 Often, we want to artificially limit the "step size" we take in gradient descent. Small, controlled changes in the parameters we're optimizing with gradient descent will mean that the overall process is slower, but the parameters are more likely to converge to their optimal values. The learning rate for your model is a small scalar meant to artificially reduce the step size in gradient descent. Learning rate is a tunable parameter for your model that you can set -- large learning rates get closer to the optimal values more quickly, but have trouble landing exactly at the optimal values because the step size is too big for the small distances it needs to travel when it gets close. Conversely, small learning rates means the model will take a longer time to get to the optimal parameters, but when it does get there, it will be extremely close to the optimal values, thereby providing the best overall performance for the model. 
 
-You'll often see learning rates denoted by the symbol, $\gamma$ -- this is the greek letter, **_gamma_**.  Don't worry if you're still hazy on the concept of gradient descent -- we'll explore it in much more detail when we start studying deep learning!
+You'll often see learning rates denoted by the symbol,  <img src="https://render.githubusercontent.com/render/math?math=\gamma"> -- this is the greek letter, **_gamma_**.  Don't worry if you're still hazy on the concept of gradient descent -- we'll explore it in much more detail when we start studying deep learning!
 
 
 The `sklearn` library contains some excellent implementations of Adaboost, as well as several different types of gradient boosting classifiers. These classifiers can be found in the `ensemble` module, which you will make use of in the upcoming lesson. 
