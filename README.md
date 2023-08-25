@@ -1,4 +1,3 @@
-
 # Gradient Boosting and Weak Learners
 
 ## Introduction
@@ -64,7 +63,7 @@ In Adaboost, each learner is trained on a subsample of the dataset, much like we
 
 The following diagram demonstrates how the weights change for each example as classifiers get them right and wrong. 
 
-<img src='images/new_adaboost.png' width="600">
+<img src='https://curriculum-content.s3.amazonaws.com/data-science/images/new_adaboost.png' width="600">
 
 Pay attention to the colors of the pluses and minuses -- pluses are meant to be in the blue section, and minuses are meant to be in the red. The decision boundary of the tree can be interpreted as the line drawn between the red and blue sections. As you can see above, examples that were misclassified are larger in the next iteration, while examples that were classified correctly are smaller. As we combine the decision boundaries of each new classifier, we end up with a classifier that correctly classifies all of the examples!
 
@@ -78,7 +77,7 @@ Pay attention to the colors of the pluses and minuses -- pluses are meant to be 
 Since the loss is most heavily inflated by examples where the model was wrong, gradient descent will push the algorithm towards creating a new learner that will focus on these harder examples. If the next tree gets these right, then the loss goes down! In this way, gradient descent allows us to continually train and improve on the loss for each model to improve the overall performance of the ensemble as a whole by focusing on the "hard" examples that cause the loss to be high. 
 
 
-<img src='images/new_gradient-boosting.png'>
+<img src='https://curriculum-content.s3.amazonaws.com/data-science/images/new_gradient-boosting.png'>
 
 
 ### Learning rates
